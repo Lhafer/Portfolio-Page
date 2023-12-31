@@ -1,22 +1,22 @@
-export function Banner() {
+export function Banner({ updateLearning }) {
   function scrollBanner() {
-    var banner = document.getElementById("about");
-    var underBanner = document.getElementById("underBanner");
+    const banner = document.getElementById("about");
+    const underBanner = document.getElementById("underBanner");
     // Add the 'moved' class to trigger the animation
     banner.classList.remove("unmove");
     banner.classList.add("moved");
     underBanner.classList.add("show");
     document.body.classList.add("scrolled");
-    learning = true;
+    updateLearning();
   }
 
   function unmove() {
-    var banner = document.getElementById("about");
+    const banner = document.getElementById("about");
     // Add the 'moved' class to trigger the animation
     banner.classList.remove("moved");
     banner.classList.add("unmove");
     document.body.classList.remove("scrolled");
-    learning = false;
+    updateLearning();
   }
 
   return (

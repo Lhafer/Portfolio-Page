@@ -1,31 +1,17 @@
 import { Component, useState } from "react";
 import { Banner } from "./Banner";
+import { TopBar } from "./TopBar.jsx";
+var learning = false;
 export default function App() {
-  const [email, setEmail] = useState("");
+  const [learning, setLearning] = useState(false);
 
-  var learning = false;
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 50 || learning) {
-      document.body.classList.add("scrolled");
-    } else {
-      document.body.classList.remove("scrolled");
-    }
-  });
-
+  const updateLearning = () => {
+    setLearning(!learning);
+  };
   return (
     <>
-      <div id="topBar">
-        <div id="about_button" className="topLink">
-          <a href="#about">About Me</a>
-        </div>
-        <div className="topLink">
-          <a href="#projects">Projects</a>
-        </div>
-        <div className="topLink">
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-      <Banner />
+      <TopBar />
+      <Banner updateLearning={updateLearning} />
       <input
         type="text"
         value={email}
