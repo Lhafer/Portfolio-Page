@@ -1,0 +1,367 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background: linear-gradient(to right, rgb(31, 29, 29), black);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+#topBar {
+  display: flex;
+  position: fixed;
+  top: -100px;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to left, white, black);
+  z-index: 999;
+  padding: 10px;
+  justify-content: center;
+  box-shadow: 0px -10px 10px grey inset;
+  transition: top 0.3s;
+  gap: 20px;
+}
+
+body.scrolled #topBar {
+  top: 0px;
+}
+
+.topLink {
+  height: 35px;
+  width: 100px;
+  border-style: ridge;
+  border-color: white;
+  border-radius: 5px;
+  background-color: grey;
+  align-items: center;
+}
+
+.topLink a {
+  text-decoration: none;
+  display: block;
+  color: white;
+  padding: 10px;
+}
+
+.topLink:hover {
+  border-color: black;
+}
+
+.topLink a:hover {
+  box-shadow: 0px 0px 5px black;
+}
+
+.banner {
+  text-align: center;
+  color: white;
+  background-image: url("assets/logan_coding.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: transform 0.5s ease-in-out;
+}
+
+.banner.moved {
+  transform: translateY(-100vh); /* Move the banner upwards by its own height */
+}
+.banner.unmove {
+  transform: translateY(0vh);
+}
+/* Style for the banner image */
+.underBanner {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+}
+.underBanner.show {
+  opacity: 1;
+}
+#techStack {
+  transform: translate(40vh, 20vh);
+}
+table {
+  border-collapse: collapse; /* Merge border spacing */
+  margin-bottom: 20px; /* Add some spacing between tables */
+  background-color: black;
+}
+
+/* Style table headers (th) */
+caption {
+  color: white;
+}
+th {
+  background-color: #f2f2f2; /* Light gray background for header cells */
+  padding: 12px;
+
+  border-bottom: 2px solid #ddd; /* Bottom border for header cells */
+}
+
+/* Style table rows (tr) */
+tr {
+  border-bottom: 1px solid #ddd; /* Bottom border for all rows */
+}
+
+/* Style table data cells (td) */
+td {
+  color: white;
+  padding: 10px;
+  text-align: left;
+  width: fit-content;
+}
+
+/* Add some hover effect for better user interaction */
+tr:hover {
+  background-color: #f5f5f5; /* Light background color on hover */
+}
+.showLess {
+  left: 48.5%;
+  top: 10%;
+}
+button {
+  background-color: rgba(248, 243, 243, 0.8);
+  padding: 3px;
+  position: absolute;
+}
+
+#learnMore {
+  border: none;
+  transform: translate(-50%, -50%);
+  left: 60%;
+  top: 65%;
+  opacity: 0.6;
+}
+
+.text {
+  position: absolute;
+  font-family: "Sometype Mono";
+  top: 45%;
+  opacity: 0.6;
+  color: black;
+  font-weight: bold;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(248, 243, 243, 0.5);
+  padding: 10px;
+  padding-left: 15px;
+}
+
+#textU {
+  top: 55%;
+  left: 60%;
+}
+
+#projects {
+  color: white;
+  text-align: center;
+  padding-top: 110px;
+  margin: -5%;
+}
+
+.projectWrapper {
+  visibility: visible;
+  margin-top: 35%;
+  width: 75%;
+  height: 30%;
+}
+.circleCont {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation: 4s ease infinite shadowColor;
+  box-shadow: 0px 0px 100px purple;
+  position: relative;
+  visibility: visible;
+}
+.circleImg {
+  width: 100%;
+  height: 100%; /* Maintain the image's aspect ratio */
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 1;
+  z-index: 500;
+}
+.circleImg2 {
+  width: 100%;
+  height: 100%; /* Maintain the image's aspect ratio */
+  border-radius: 50%;
+  opacity: 0;
+  object-fit: cover;
+  position: absolute;
+}
+
+.circle:hover .circleImg {
+  animation: 0.2s ease-in-out 1s 1 disappear;
+  animation-fill-mode: forwards;
+}
+
+.circle:hover .circleImg2 {
+  animation: 0.2s ease-in-out 1s 1 appear;
+  animation-fill-mode: forwards;
+}
+.circle:hover #portIframe {
+  animation: 0.2s ease-in-out 1s 1 disappear;
+  animation-fill-mode: forwards;
+}
+.circle {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 50%;
+  visibility: visible;
+}
+
+.projectTitle {
+  color: white;
+  padding: 10px;
+  width: 400px;
+}
+
+.projects .projectWrapper:nth-of-type(1) {
+  margin-top: auto;
+}
+
+.projects .projectWrapper:nth-of-type(odd) .projectTitle {
+  margin-left: auto;
+}
+
+.projects .projectWrapper:nth-of-type(even) .projectTitle {
+  margin-right: auto;
+}
+.projects {
+  margin-top: 10%;
+  height: 1000px;
+  width: 100%;
+  border-style: solid;
+  visibility: hidden;
+}
+
+.projectWrapper:nth-child(even) {
+  margin-left: -30%;
+}
+
+.projectWrapper:nth-child(odd) {
+  margin-left: auto;
+  margin-right: -30%;
+}
+
+.circle:hover {
+  animation: 0.2s ease-in-out 0s 1 otpRise;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+#portLink {
+  z-index: 994;
+}
+
+#portIframe {
+  /* Your styles here */
+  position: absolute;
+  z-index: 500;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border-style: hidden;
+}
+
+#contact {
+  display: flex;
+  margin-top: 350%;
+}
+
+dl {
+  margin-left: 300px;
+}
+
+#headShot {
+  margin-left: auto;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: white;
+  z-index: 8;
+}
+
+.contact_and_pic {
+  display: flex;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact {
+  margin-right: auto;
+  margin-left: -280px;
+  margin-top: 100%;
+  margin-top: auto;
+  padding: 5px;
+  height: max-content;
+  justify-content: center;
+  align-content: center;
+  border-style: solid;
+  border-radius: 20px;
+  border-bottom-left-radius: 180px;
+  border-color: white;
+  color: grey;
+  width: max-content;
+  border-color: white;
+  z-index: 7;
+}
+.box {
+  width: 100%;
+  height: 500px;
+}
+
+@keyframes shadowColor {
+  0% {
+    box-shadow: 0px 0px 100px rgb(146, 15, 163);
+  }
+
+  25% {
+    box-shadow: 0px 0px 100px rgb(85, 25, 163);
+  }
+
+  75% {
+    box-shadow: 0px 0px 100px rgb(10, 7, 175);
+  }
+
+  100% {
+    box-shadow: 0px 0px 100px rgb(146, 15, 163);
+  }
+}
+
+@keyframes otpRise {
+  100% {
+    transform: scale(1.2);
+  }
+}
+@keyframes appear {
+  to {
+    z-index: 600;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
