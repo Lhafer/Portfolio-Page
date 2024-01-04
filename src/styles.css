@@ -255,9 +255,8 @@ button {
   display: flex;
   flex-direction: column;
   border-style: solid;
-  visibility: visible;
+  visibility: hidden;
   margin-bottom: 5%;
-  border: 1px solid red;
 }
 
 .circle:hover {
