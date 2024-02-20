@@ -34,7 +34,7 @@ export function Banner({ updateLearning }) {
           </tr>
           <tr>
             <td>HTML</td>
-            <td></td>
+            <td>Firestore</td>
             <td>Java</td>
           </tr>
           <tr>
